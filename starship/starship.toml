@@ -1,0 +1,29 @@
+# Inserts a blank line between shell prompts
+add_newline = false 
+
+# Want a different symbol for errors
+[character]                            
+success_symbol = "[❯](bold green)"     
+error_symbol = "[X](bold red)"
+
+#Make prompt single line
+[line_break]
+disabled = true
+
+#Show command times for anything that took more than 5s
+[cmd_duration]
+min_time = 5_000
+format = "ran in [$duration](yellow) "
+
+# show the time
+[time]
+time_format = "%R"
+format = "[$time](dimmed green) "
+disabled = false
+
+# manage length of paths shown for directories
+[directory]
+truncation_length = 3
+truncation_symbol = "../"
+format = '[\[$path\]]($style)[$read_only]($read_only_style) '
+
