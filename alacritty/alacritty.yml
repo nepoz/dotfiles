@@ -4,6 +4,12 @@ shell:
 decorations:
   full
 
+window:
+  padding:
+    x: 5 
+    y: 5
+  dynamic_padding: true
+
 scrolling:
   history: 1000
 
