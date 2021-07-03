@@ -222,7 +222,7 @@ bindsym $mod+shift+x exec /usr/local/bin/custom_lock.sh
 #Exec useful files at the start of our run
 set $browser firefox
 set $console alacritty
-set $wallpaper "/home/hinokami/Downloads/doggopng"
+set $wallpaper "/home/hinokami/Downloads/doggo.png"
 
 exec $browser
 exec $console
