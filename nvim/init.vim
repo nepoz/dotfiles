@@ -87,9 +87,15 @@ set nohlsearch
 set nobackup
 set undodir=~/.vim/undodir
 
-"set some more plugin vars etc
-" format with prettier followed by eslint for JS
+" set up keybinds for easy toggling between splits
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
+"set some more plugin vars etc
+
+" format with prettier followed by eslint for JS
 let g:prettier#autoformat = 0
 let g:ale_fixers = {
       \  '*': ['remove_trailing_lines', 'trim_whitespace'],
