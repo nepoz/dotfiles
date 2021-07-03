@@ -11,7 +11,6 @@ zstyle :compinstall filename '/home/hinokami/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-neofetch
 
 # Init starship
 eval "$(starship init zsh)"
