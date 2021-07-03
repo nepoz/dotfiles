@@ -100,7 +100,14 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.css,*.less,*.scss, PrettierAsync
-autocmd VimEnter * NERDTree | wincmd p
+
+" Call NerdTree only when we don't call with a file in the command
+function! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+autocmd VimEnter * call StartUp()
 
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
