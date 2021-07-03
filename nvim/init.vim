@@ -93,6 +93,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" set keybind for toggling nerdtree
+nnoremap <C-e> :NERDTreeToggle<CR>
+
 "set some more plugin vars etc
 
 " format with prettier followed by eslint for JS
