@@ -15,11 +15,30 @@ if (empty($TMUX))
 endif
 
 "Loading Plugins"
+let g:airline_powerline_fonts = 1
 call plug#begin('~/.vim/plugged')
-Plug 'https://github.com/joshdick/onedark.vim.git'
-Plug 'https://github.com/sheerun/vim-polyglot.git'
-Plug 'https://github.com/vim-airline/vim-airline'
-Plug 'https://github.com/preservim/nerdtree'
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+Plug 'tpope/vim-fugitive'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mxw/vim-jsx'
+Plug 'sbdchd/neoformat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
 Plug 'dense-analysis/ale'
 call plug#end()
 
@@ -34,7 +53,6 @@ set tabstop=4
 "Searching"
 set ic
 set smartcase
-set hlsearch
 
 "Performance"
 set lazyredraw
@@ -65,4 +83,32 @@ set foldnestmax=3
 "Convinience stuff"
 set history=1000
 set noswapfile
-set spell
+set nohlsearch
+set nobackup
+set undodir=~/.vim/undodir
+
+"set some more plugin vars etc
+" format with prettier followed by eslint for JS
+
+let g:prettier#autoformat = 0
+let g:ale_fixers = {
+      \  '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'javascript' : ['prettier', 'eslint'],
+      \'python' : ['yapf'],
+      \}
+
+let g:ale_fix_on_save = 1
+
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.css,*.less,*.scss, PrettierAsync
+autocmd VimEnter * NERDTree | wincmd p
+
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+autocmd BufWritePre *.js Neoformat
+
+" coc conf
+source ~/.config/nvim/coc.vim
