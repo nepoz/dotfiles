@@ -109,14 +109,14 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1. Terminals "
 set $ws2 "2. Browser "
-set $ws3 "3. Code "
+set $ws3 "3. Code "
 set $ws4 "4. Spotify "
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10. Discord "
+set $ws10 "10. Discord "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -128,7 +128,7 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
