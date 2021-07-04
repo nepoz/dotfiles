@@ -107,16 +107,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1. Terminals "
-set $ws2 "2. Browser "
-set $ws3 "3. Code "
-set $ws4 "4. Spotify "
+set $ws1 "1:Terminals  |"
+set $ws2 "2:Browser  |"
+set $ws3 "3:Code  |"
+set $ws4 "4:Spotify  |"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10. Discord "
+set $ws10 "10:Discord "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -202,6 +202,8 @@ hide_edge_borders both
 # Start i3bar to display a workspace bar (plus the system information bumblebee gives us
 bar {
         position top
+        strip_workspace_numbers yes
+
         status_command bumblebee-status \
         -m git spotify arch-update \
         disk pacman pasink pasource battery datetime \
