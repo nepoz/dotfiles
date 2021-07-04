@@ -37,6 +37,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Set up screenshot
+bindsym --release Print exec "flameshot full -c"
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -238,7 +241,7 @@ bindsym $mod+shift+x exec /usr/local/bin/custom_lock.sh
 #Exec useful files at the start of our run
 set $browser firefox
 set $console alacritty
-set $wallpaper "/home/hinokami/Downloads/doggo.png"
+set $wallpaper "~/.config/wallpapers/starry_sky.png"
 
 exec $browser
 exec $console

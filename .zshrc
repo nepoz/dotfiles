@@ -14,3 +14,6 @@ compinit
 
 # Init starship
 eval "$(starship init zsh)"
+
+# Aliases
+alias icat='kitty +kitten icat'
