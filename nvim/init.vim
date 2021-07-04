@@ -40,6 +40,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 Plug 'dense-analysis/ale'
+Plug 'fladson/vim-kitty', { 'branch' : 'main' }
 call plug#end()
 
 "screw compatibility"
