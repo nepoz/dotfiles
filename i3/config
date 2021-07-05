@@ -219,11 +219,12 @@ bar {
         strip_workspace_numbers yes
 
         status_command bumblebee-status \
-        -m git spotify arch-update \
+        -m git spotify arch-update memory \
         disk pacman pasink pasource battery datetime \
         -p battery.warning=40 battery.critical=20 \
         datetime.format="%d %b %H:%M" \
         disk.format="{used}/{size}" \
+        memory.format="{used}" \
         pacman.sum=True \
         -t dracula-powerline
 
