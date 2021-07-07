@@ -220,13 +220,12 @@ bar {
         set $devel_bumblebee_status ~/bumblebee-status/bumblebee-status
 
         status_command $devel_bumblebee_status \
-        -m git spotify arch-update memory network_traffic network \
-        disk pacman pasink pasource battery datetime \
+        -m git arch-update memory network_traffic network \
+        disk pasink pasource battery datetime \
         -p battery.warning=40 battery.critical=20 \
         datetime.format="%d %b %H:%M" \
         disk.format="{used}/{size}" \
         memory.format="{used}" \
-        pacman.sum=True \
         -t dracula-powerline
 
         font pango: System San Francisco 13, Font Awesome 13

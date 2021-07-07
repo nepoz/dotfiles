@@ -13,3 +13,4 @@ i3blocks
 dconf
 gtk*
 coc/extensions/node_modules
+systemd
