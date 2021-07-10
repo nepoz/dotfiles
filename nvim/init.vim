@@ -41,7 +41,7 @@ Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 Plug 'dense-analysis/ale'
 Plug 'fladson/vim-kitty', { 'branch' : 'main' }
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', {'dir': '~/.config/.fzf', 'do': './install --all'}
 call plug#end()
 
 "screw compatibility"
