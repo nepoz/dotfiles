@@ -246,7 +246,7 @@ bindsym $mod+shift+x exec /usr/local/bin/custom_lock.sh
 #Exec useful files at the start of our run
 set $browser firefox
 set $console kitty
-set $wallpaper ~/.config/wallpapers/perfect_blue.jpg
+set $wallpaper ~/.config/wallpapers/window.jpg
 
 exec $browser
 exec $console
