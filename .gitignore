@@ -15,3 +15,4 @@ gtk*
 coc/extensions/node_modules
 systemd
 .fzf
+/cef_user_data
