@@ -1,0 +1,13 @@
+.fzf/
+Thunar/
+configstore/
+dconf/
+discord/
+gtk-2.0/
+libreoffice/
+mimeapps.list
+pavucontrol.ini
+pulse/
+spotify/
+styluslabs/
+xfce4/
