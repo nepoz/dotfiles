@@ -16,6 +16,10 @@ endif
 
 "Loading Plugins"
 let g:airline_powerline_fonts = 1
+
+let g:closetag_filetypes = 'html, xhtml, phtml'
+let g:closetag_xhtml_filetypes = 'xhtml, jsx, js'
+
 call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
@@ -42,6 +46,7 @@ Plug 'preservim/nerdtree'
 Plug 'dense-analysis/ale'
 Plug 'fladson/vim-kitty', { 'branch' : 'main' }
 Plug 'junegunn/fzf', {'dir': '~/.config/.fzf', 'do': './install --all'}
+Plug 'alvan/vim-closetag'
 call plug#end()
 
 "screw compatibility"
