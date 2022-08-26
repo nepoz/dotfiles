@@ -31,6 +31,15 @@ from libqtile.lazy import lazy
 from libqtile.dgroups import simple_key_binder
 from libqtile import hook
 
+import os
+import subprocess
+
+## Define startup routine
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.Popen([home])
+
 mod = "mod4"
 terminal = "kitty" 
 
