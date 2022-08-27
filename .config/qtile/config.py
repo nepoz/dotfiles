@@ -89,9 +89,9 @@ keys = [
 
 groups = [
     Group("", spawn=["kitty"], persist=True, init=True),
-    Group("", persist=False),
+    Group("", persist=False),
     Group("", persist=False),
-    Group("", persist = False),
+    Group("", spawn=["steam"], persist=False, init=True),
     Group("", spawn=["discord", "spotify"],  persist=False, init=True),
     Group("", persist=False),
 ]
@@ -130,7 +130,7 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-current_wallpaper = "~/.wallpaper/bluesky.png"
+current_wallpaper = "~/.wallpaper/cafe.jpg"
 current_py = "~/.wallpaper/python.png"
 current_arch = "~/.wallpaper/arch.png"
 screens = [
