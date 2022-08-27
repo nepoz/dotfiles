@@ -131,17 +131,32 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 current_wallpaper = "~/.wallpaper/bluesky.png"
+current_py = "~/.wallpaper/python.png"
+current_arch = "~/.wallpaper/arch.png"
 screens = [
     Screen(
         top = bar.Bar([
-                widget.GroupBox(
-                    highlight_method="line",
-                    hide_unused=True,
-                    block_highlight_text_color="#FFFFFF",
-                    highlight_color=["#7F00FF", "#AA98A9"]
-                ),
+            ## Add python image to bar cuz qtile
+            widget.Image(filename=current_py, scale=True),
+
+            ## Add groups to bar
+            widget.GroupBox(
+                highlight_method="line",
+                hide_unused=True,
+                block_highlight_text_color="#FFFFFF",
+                highlight_color=["#7F00FF", "#AA98A9"],
+            ),
+            widget.Spacer(),
+
+            widget.OpenWeather(
+                location="Tyler",
+                metric=False,
+            ),
+            widget.Systray(),
+            widget.Clock(format="%d/%m/%y %a %H:%M", padding=16),
+            widget.Image(filename=current_arch, scale=True, padding=8)
         ], 30, background="#5030BC"),
-        wallpaper=current_wallpaper
+        wallpaper=current_wallpaper,
         wallpaper_mode="fill",
     ),
 ]
