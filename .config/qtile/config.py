@@ -117,7 +117,10 @@ keys.extend([
     
 
 layouts = [
-    layout.MonadTall(),
+    layout.MonadTall(
+        margin=4,
+        border_width=0,
+    ),
 ]
 
 widget_defaults = dict(
@@ -129,7 +132,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
