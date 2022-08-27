@@ -88,12 +88,12 @@ keys = [
 
 
 groups = [
-    Group("term", spawn=["kitty"], persist=True, init=True),
-    Group("www", persist=False),
-    Group("dev", persist=False),
-    Group("VM", persist = False),
-    Group("discord", spawn=["discord", "spotify"],  persist=False, init=True),
-    Group("shh", persist=False),
+    Group("", spawn=["kitty"], persist=True, init=True),
+    Group("", persist=False),
+    Group("", persist=False),
+    Group("", persist = False),
+    Group("", spawn=["discord", "spotify"],  persist=False, init=True),
+    Group("", persist=False),
 ]
 
 ## bind keys to go to the group i want
@@ -125,36 +125,23 @@ layouts = [
 
 widget_defaults = dict(
     font="sans",
-    fontsize=12,
+    fontsize=14,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
 
+current_wallpaper = "~/.wallpaper/bluesky.png"
 screens = [
     Screen(
-        top=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
+        top = bar.Bar([
+                widget.GroupBox(
+                    highlight_method="line",
+                    hide_unused=True,
+                    block_highlight_text_color="#FFFFFF",
+                    highlight_color=["#7F00FF", "#AA98A9"]
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
-            ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-        ),
-        wallpaper="~/.wallpaper/bluesky.png",
+        ], 30, background="#5030BC"),
+        wallpaper=current_wallpaper
         wallpaper_mode="fill",
     ),
 ]
