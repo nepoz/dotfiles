@@ -88,12 +88,12 @@ keys = [
 
 
 groups = [
-    Group("", spawn=["kitty"], persist=True, init=True),
-    Group("", persist=False),
-    Group("", persist=False),
-    Group("", spawn=["steam"], persist=False, init=True),
-    Group("", spawn=["discord", "spotify"],  persist=False, init=True),
-    Group("", persist=False),
+    Group("term", spawn=["kitty"], persist=True, init=True),
+    Group("www", persist=False),
+    Group("dev", persist=False),
+    Group("game", spawn=["steam"], persist=False, init=True),
+    Group("social", spawn=["discord", "spotify"],  persist=False, init=True),
+    Group("priv", persist=False),
 ]
 
 ## bind keys to go to the group i want
@@ -113,8 +113,11 @@ keys.extend([
     Key([mod, "shift"], "Tab", lazy.screen.next_group()),
 ])
 
-
-    
+## bind keys for screenshots
+keys.extend([
+    Key([mod], "s", lazy.spawn("flameshot screen -n 0 -c")),
+    Key([mod, "shift"], "s", lazy.spawn("flameshot gui -c"))
+])
 
 layouts = [
     layout.MonadTall(
