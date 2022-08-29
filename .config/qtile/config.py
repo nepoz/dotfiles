@@ -88,12 +88,12 @@ keys = [
 
 
 groups = [
-    Group("term", spawn=["kitty"], persist=True, init=True),
-    Group("www", persist=False),
-    Group("dev", persist=False),
-    Group("game", spawn=["steam"], persist=False, init=True),
-    Group("social", spawn=["discord", "spotify"],  persist=False, init=True),
-    Group("priv", persist=False),
+    Group("term", spawn=["kitty"], init=True),
+    Group("www"),
+    Group("dev"),
+    Group("vm", spawn=["virt-manager"], init=True),
+    Group("social", spawn=["discord", "spotify"], init=True),
+    Group("priv"),
 ]
 
 ## bind keys to go to the group i want
