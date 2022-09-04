@@ -150,11 +150,6 @@ screens = [
                 highlight_color=["#7F00FF", "#AA98A9"],
             ),
             widget.Spacer(),
-
-            widget.OpenWeather(
-                location="Tyler",
-                metric=False,
-            ),
             widget.Systray(),
             widget.Clock(format="%d/%m/%y %a %H:%M", padding=16),
             widget.Image(filename=current_arch, scale=True, padding=8)
