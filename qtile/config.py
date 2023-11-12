@@ -16,6 +16,11 @@ launcher_prompt = "rofi -show drun"
 browser = "firefox"
 my_wallpaper = "~/img/big_moon.jpg"
 
+@hook.subscribe.startup_once
+def autostart():
+    startup_script = os.path.expanduser("~/.config/qtile/autostart.sh")
+    subprocess.Popen([startup_script])
+
 keys = [
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
