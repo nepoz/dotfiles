@@ -91,7 +91,7 @@ for i in groups:
     )
 
 layouts = [
-    layout.MonadTall(border_width = 4),
+    layout.MonadTall(border_width = 2, margin = 4),
     layout.Max(),
 ]
 
