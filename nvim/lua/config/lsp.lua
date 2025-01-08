@@ -52,6 +52,9 @@ cmp.setup({
 		["<C-u>"] = cmp.mapping.scroll_docs(-4),
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
 	}),
+  formatting = {
+    format = require("nvim-highlight-colors").format
+  },
 	snippet = {
 		expand = function(args)
 			vim.snippet.expand(args.body)

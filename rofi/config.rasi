@@ -1,0 +1,7 @@
+configuration {
+    drun-show-actions: false;
+    show-icons: true;
+    dpi: 192;
+    font: "hack 14";
+}
+@theme "arthur"
