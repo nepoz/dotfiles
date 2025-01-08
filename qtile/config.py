@@ -58,6 +58,24 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "Return", lazy.spawn(terminal), desc="Spawn a terminal"),
     Key([mod], "d", lazy.spawn(app_search)),
+    Key(
+        [],
+        "XF86AudioLowerVolume",
+        lazy.spawn("amixer sset Master 5%-"),
+        desc="Lower Volume by 5%",
+    ),
+    Key(
+        [],
+        "XF86AudioRaiseVolume",
+        lazy.spawn("amixer sset Master 5%+"),
+        desc="Raise Volume by 5%",
+    ),
+    Key(
+        [],
+        "XF86AudioMute",
+        lazy.spawn("amixer sset Master 1+ toggle"),
+        desc="Mute/Unmute Volume",
+    ),
 ]
 
 groups = [Group(i) for i in "123456789"]
