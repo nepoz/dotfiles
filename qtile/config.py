@@ -145,7 +145,7 @@ screens = [
                     this_current_screen_border="#bbbbbb",
                 ),
                 widget.Sep(),
-                widget.Mpris2(),
+                widget.Mpris2(max_chars=100),
                 widget.Spacer(),
                 widget.Volume(),
                 widget.Sep(),
