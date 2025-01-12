@@ -76,6 +76,16 @@ keys = [
         lazy.spawn("amixer sset Master 1+ toggle"),
         desc="Mute/Unmute Volume",
     ),
+    Key(
+        [], "XF86AudioPlay", lazy.spawn("playerctl play-pause"), desc="Play/Pause audio"
+    ),
+    Key(
+        [],
+        "XF86AudioPrev",
+        lazy.spawn("playerctl previous"),
+        desc="Switch to previous track",
+    ),
+    Key([], "XF86AudioNext", lazy.spawn("playerctl next"), desc="Switch to next track"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -134,6 +144,8 @@ screens = [
                     highlight_method="block",
                     this_current_screen_border="#bbbbbb",
                 ),
+                widget.Sep(),
+                widget.Mpris2(),
                 widget.Spacer(),
                 widget.Volume(),
                 widget.Sep(),
