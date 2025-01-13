@@ -149,7 +149,7 @@ screens = [
                     this_current_screen_border="#bbbbbb",
                 ),
                 widget.Sep(),
-                widget.Mpris2(max_chars=100),
+                widget.Mpris2(max_chars=50, scroll=True),
                 widget.Spacer(),
                 widget.Clock(
                     format="%a %I:%M %p",
