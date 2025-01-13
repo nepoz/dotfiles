@@ -1,5 +1,6 @@
 import os
 import subprocess
+import pytz
 
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Screen
@@ -132,6 +133,9 @@ mouse = [
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
+# Handle norway time
+norway_tz = pytz.timezone("Europe/Oslo")
+
 screens = [
     Screen(
         wallpaper="~/.config/bg/bucci.png",
@@ -147,13 +151,21 @@ screens = [
                 widget.Sep(),
                 widget.Mpris2(max_chars=100),
                 widget.Spacer(),
-                widget.Volume(),
+                widget.Clock(
+                    format="%a %I:%M %p",
+                    timezone=norway_tz,
+                    fmt="Norway: {}",
+                ),
+                widget.Sep(),
+                widget.Volume(fmt="VOL: {}"),
                 widget.Sep(),
                 widget.Wlan(),
                 widget.Sep(),
-                widget.Memory(),
+                widget.Memory(fmt="Mem: {}"),
                 widget.Sep(),
-                widget.Battery(format="{char} {percent: 2.0%} {hour:d}:{min:02d}"),
+                widget.Battery(
+                    format="{percent: 2.0%} {hour:d}:{min:02d}", fmt="BAT: {}"
+                ),
                 widget.Sep(),
                 widget.Systray(icon_size=32),
                 widget.Sep(),
