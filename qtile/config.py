@@ -10,6 +10,7 @@ from libqtile import hook
 mod = "mod4"
 terminal = "kitty"
 app_search = "rofi -show drun"
+font = "Hack"
 
 
 @hook.subscribe.startup_once
@@ -115,7 +116,7 @@ layouts = [
 
 widget_defaults = dict(
     font="Hack",
-    fontsize=24,
+    fontsize=16,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
@@ -143,33 +144,56 @@ screens = [
         top=bar.Bar(
             [
                 widget.GroupBox(
-                    block_highlight_text_color="#d64f4d",
+                    block_highlight_text_color="#ffffff",
                     font="Hack",
                     highlight_method="block",
-                    this_current_screen_border="#bbbbbb",
+                    this_current_screen_border="#61afef",
+                    foreground="#abb2bf",
+                    background="#282c34",
+                    inactive="#5c6370",
                 ),
-                widget.Sep(),
-                widget.Mpris2(max_chars=50, scroll=True),
+                widget.Sep(linewidth=2, foreground="#ffffff"),
+                widget.Mpris2(
+                    max_chars=50,
+                    scroll=True,
+                    foreground="#abb2bf",
+                    background="#282c34",
+                ),
                 widget.Spacer(),
                 widget.Clock(
                     format="%a %I:%M %p",
                     timezone=norway_tz,
                     fmt="Norway: {}",
+                    foreground="#98c379",
+                    background="#282c34",
                 ),
-                widget.Sep(),
-                widget.Volume(fmt="VOL: {}"),
-                widget.Sep(),
-                widget.Wlan(),
-                widget.Sep(),
-                widget.Memory(fmt="Mem: {}"),
-                widget.Sep(),
+                widget.Sep(linewidth=2, foreground="#ffffff"),
+                widget.Volume(
+                    fmt="VOL: {}",
+                    foreground="#d19a66",
+                    background="#282c34",
+                ),
+                widget.Sep(linewidth=2, foreground="#ffffff"),
+                widget.Memory(
+                    fmt="Mem: {}",
+                    foreground="#c678dd",
+                    background="#282c34",
+                ),
+                widget.Sep(linewidth=2, foreground="#ffffff"),
                 widget.Battery(
-                    format="{percent: 2.0%} {hour:d}:{min:02d}", fmt="BAT: {}"
+                    format="{percent: 2.0%} {hour:d}:{min:02d}",
+                    fmt="BAT: {}",
+                    foreground="#e5c07b",
+                    background="#282c34",
                 ),
-                widget.Sep(),
-                widget.Systray(icon_size=32),
-                widget.Sep(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+                widget.Sep(linewidth=2, foreground="#ffffff"),
+                widget.Systray(icon_size=24, background="#282c34", padding=4),
+                widget.Sep(linewidth=2, foreground="#ffffff"),
+                widget.Clock(
+                    format="%Y-%m-%d %a %I:%M %p",
+                    foreground="#56b6c2",
+                    background="#282c34",
+                ),
             ],
             36,
             background="#282c34",

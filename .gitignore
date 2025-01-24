@@ -1,1 +1,13 @@
-*/__pycache__
+/*
+
+!/qtile
+!/kitty
+!/qtile
+!/rofi
+!/dunst
+!/picom
+!/bg
+!/tmux
+!/nvim
+
+qtile/**/__pycache__/
