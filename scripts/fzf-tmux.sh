@@ -1,6 +1,6 @@
 #!/bin/bash
 
-target=$(find . -type d -print 2>/dev/null | fzf --height 40% --reverse)
+target=$(find .config work projects -maxdepth 1 -type d 2>/dev/null | fzf --height 40% --reverse)
 
 if [[ -z "$target" ]]; then
     exit 1
