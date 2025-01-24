@@ -17,6 +17,7 @@ return {
 				"python",
 				"dart",
 				"html",
+				"powershell",
 			},
 			sync_install = false,
 			highlight = { enable = true },

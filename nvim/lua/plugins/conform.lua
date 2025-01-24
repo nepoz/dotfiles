@@ -14,6 +14,9 @@ return {
 			lua = { "stylua" },
 			python = { "black" },
 			go = { "gofumpt" },
+			hcl = { "hclfmt" },
+			tf = { "hclfmt" },
+			md = { "mdformat" },
 		},
 		format_on_save = {
 			lsp_fallback = true,
