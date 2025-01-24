@@ -9,5 +9,6 @@
 !/bg
 !/tmux
 !/nvim
+!/scripts
 
 qtile/**/__pycache__/
