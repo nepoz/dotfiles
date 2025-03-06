@@ -18,7 +18,13 @@ return {
 				"python",
 				"dart",
 				"html",
+<<<<<<< Updated upstream
 				"powershell",
+				"zig",
+				"astro",
+=======
+				"c_sharp",
+>>>>>>> Stashed changes
 			},
 			sync_install = false,
 			highlight = { enable = true },

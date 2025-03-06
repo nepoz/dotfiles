@@ -14,6 +14,11 @@ return {
 					quit_on_open = true,
 				},
 			},
+			git = {
+				enable = true,
+				ignore = false,
+				timeout = 500,
+			},
 		})
 		vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" })
 		vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = "none" })

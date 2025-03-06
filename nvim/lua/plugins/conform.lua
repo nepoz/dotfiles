@@ -7,6 +7,7 @@ return {
 			typescript = { "prettier" },
 			javascriptreact = { "prettier" },
 			typescriptreact = { "prettier" },
+			astro = { "prettier" },
 			css = { "prettier" },
 			html = { "prettier" },
 			json = { "prettier" },
@@ -14,9 +15,13 @@ return {
 			lua = { "stylua" },
 			python = { "black" },
 			go = { "gofumpt" },
+<<<<<<< Updated upstream
 			hcl = { "hclfmt" },
 			tf = { "hclfmt" },
 			md = { "mdformat" },
+=======
+			cs = { "clang-format" },
+>>>>>>> Stashed changes
 		},
 		format_on_save = {
 			lsp_fallback = true,

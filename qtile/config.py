@@ -153,12 +153,6 @@ screens = [
                     inactive="#5c6370",
                 ),
                 widget.Sep(linewidth=2, foreground="#ffffff"),
-                widget.Mpris2(
-                    max_chars=50,
-                    scroll=True,
-                    foreground="#abb2bf",
-                    background="#282c34",
-                ),
                 widget.Spacer(),
                 widget.Clock(
                     format="%a %I:%M %p",
