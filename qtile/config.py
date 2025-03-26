@@ -155,7 +155,7 @@ screens = [
                 widget.Sep(linewidth=2, foreground="#ffffff"),
                 widget.Spacer(),
                 widget.Clock(
-                    format="%a %I:%M %p",
+                    format="%a %H:%M",
                     timezone=norway_tz,
                     fmt="Norway: {}",
                     foreground="#98c379",
@@ -184,7 +184,7 @@ screens = [
                 widget.Systray(icon_size=24, background="#282c34", padding=4),
                 widget.Sep(linewidth=2, foreground="#ffffff"),
                 widget.Clock(
-                    format="%Y-%m-%d %a %I:%M %p",
+                    format="%Y-%m-%d %a %H:%M",
                     foreground="#56b6c2",
                     background="#282c34",
                 ),

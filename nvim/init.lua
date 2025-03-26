@@ -37,25 +37,11 @@ vim.keymap.set({ "n", "v" }, "<leader>D", '"+D') -- delete line
 vim.keymap.set("n", "<leader>p", '"+p') -- paste after cursor
 vim.keymap.set("n", "<leader>P", '"+P') -- paste before cursor
 
--- highlight long commit headers
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "gitcommit",
-	callback = function()
-		-- Highlight the first line if it exceeds 50 characters
-		vim.api.nvim_exec(
-			[[
-      syntax match longline /^.\{51,}/
-      highlight longline ctermbg=red guibg=red
-    ]],
-			false
-		)
-	end,
-})
-
--- wrap body text to 72 chars
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "gitcommit",
-	callback = function()
-		vim.opt_local.textwidth = 72
-	end,
-})
+local handle = io.popen("pyenv which python3 2>/dev/null")
+if handle then
+	local python_path = handle:read("*a"):gsub("\n", "")
+	handle:close()
+	if python_path and python_path ~= "" then
+		vim.g.python3_host_prog = python_path
+	end
+end
