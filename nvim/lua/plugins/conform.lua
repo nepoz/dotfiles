@@ -15,13 +15,10 @@ return {
 			lua = { "stylua" },
 			python = { "black" },
 			go = { "gofumpt" },
-<<<<<<< Updated upstream
 			hcl = { "hclfmt" },
 			tf = { "hclfmt" },
 			md = { "mdformat" },
-=======
 			cs = { "clang-format" },
->>>>>>> Stashed changes
 		},
 		format_on_save = {
 			lsp_fallback = true,
